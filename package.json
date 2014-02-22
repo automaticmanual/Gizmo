@@ -1,0 +1,32 @@
+{
+  "name": "Gizmo",
+  "version": "0.0.1",
+  "description": "",
+  "main": "bin/gizmo.min.js",
+  "scripts": {
+    "install": "bower install",
+    "test": "grunt test",
+    "build": "npm install && grunt",
+    "start": "grunt watch"
+  },
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rstone770/Gizmo"
+  },
+  "devDependencies": {
+    "grunt-config-loader": "~0.2.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-mocha-phantomjs": "~0.4.0",
+    "mustache": "~0.8.1",
+    "underscore": "~1.5.2",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "grunt-jsdoc": "~0.5.1",
+    "ink-docstrap": "~0.3.0-0",
+    "grunt-mustache-render": "~1.2.4"
+  }
+}

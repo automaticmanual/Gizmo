@@ -1,0 +1,21 @@
+{
+  "name": "Gizmo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "lib",
+    "src",
+    "test",
+    "package.json",
+    "README",
+    "Gruntfile.js"
+  ],
+  "devDependencies": {
+    "mocha": "~1.17.1",
+    "chai": "~1.8.1",
+    "requirejs": "~2.1.10",
+    "almond": "~0.2.9"
+  }
+}

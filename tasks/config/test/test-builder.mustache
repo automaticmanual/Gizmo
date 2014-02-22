@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Spec Runner </title>
+
+    <link rel="stylesheet" href="/lib/mocha/mocha.css" />
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <div id="fixtures" style="display:none;"></div>
+    
+    <script src="/lib/chai/chai.js"></script>
+    <script src="/lib/mocha/mocha.js"></script>
+    <script src="/lib/requirejs/require.js"></script>
+
+    <script src="/test/polly.js"></script>
+        
+    <script>
+      mocha.ui('bdd');
+      mocha.reporter('html');
+
+      var should = chai.should();
+    </script>
+
+    <script>
+      require.config({
+        baseUrl: '../../',
+
+        paths: {
+          Gizmo: '../../src'
+        }
+      });
+    </script>
+
+    <script>
+      require([{{{specs}}}], function() {
+        if(window.mochaPhantomJS) {
+          mochaPhantomJS.run();
+        } else {
+          mocha.run();
+        }
+      });
+    </script>
+  </body>
+</html>
