@@ -1,13 +1,27 @@
-var config = {
+var fs, amdclean, config;
+
+fs = require('fs');
+amdclean = require('amdclean');
+
+config = {
   taskName: 'requirejs.complile',
   options: {
     baseUrl: 'src/',
     name: 'gizmo',
-    include: ['../lib/almond/almond'],
     out: 'bin/gizmo.min.js',
-    wrap: {
-      startFile: __dirname + '/start.frag',
-      endFile: __dirname + '/end.frag'
+    onModuleBundleComplete: function (data) {
+      var outputFile = data.path;
+
+      fs.writeFileSync(outputFile, amdclean.clean({
+        code: fs.readFileSync(outputFile),
+        rememberGlobalObject: false,
+        globalObject: true,
+        globalObjectName: 'Gizmo',
+        wrap: {
+          start: fs.readFileSync(__dirname + '/start.frag').toString(),
+          end: fs.readFileSync(__dirname + '/end.frag').toString()
+        }
+      }));
     }
   }
 };

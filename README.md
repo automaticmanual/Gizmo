@@ -1,7 +1,7 @@
 Gizmo [![Build Status](https://travis-ci.org/rstone770/Gizmo.png?branch=master)](https://travis-ci.org/rstone770/Gizmo)
 =====
 
-A small object library that tries to remove boilerplate code and promote better practice while providing a fresh interface when using objects. This library focuses on factories instead of the new operator. Compiled the library should play nicely as a Common, AMD and global include.
+A small object library that tries to remove boilerplate code and promote better practice while providing a fresh interface when using objects. How small you ask? Well at the current version the gz compressed lib is 441bytes. This library focuses on factories instead of the new operator. Compiled the library should play nicely as a Common, AMD and global include.
 
 ## Setup
 This repository does not include the built version of gizmo. Instead you must either build it yourself or use the library as an extern and compile it with the rest of your project. If you are using the project as an extern library, you must use require. These issues should be resolved after I setup travis-ci with some sort of bin/artifact pushing to a gh-page.

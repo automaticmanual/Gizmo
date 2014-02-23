@@ -1,2 +1,2 @@
-  return require('gizmo');
+  return Gizmo['gizmo'];
 }));

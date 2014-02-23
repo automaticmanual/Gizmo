@@ -1,6 +1,6 @@
 {
   "name": "Gizmo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "bin/gizmo.min.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "grunt-contrib-requirejs": "~0.4.1",
     "grunt-jsdoc": "~0.5.1",
     "ink-docstrap": "~0.3.0-0",
-    "grunt-mustache-render": "~1.2.4"
+    "grunt-mustache-render": "~1.2.4",
+    "amdclean": "^1.2.1"
   }
 }
