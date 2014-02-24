@@ -1,2 +1,2 @@
-  return Gizmo['gizmo'];
+  return gizmo;
 }));

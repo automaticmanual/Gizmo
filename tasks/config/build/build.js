@@ -14,9 +14,6 @@ config = {
 
       fs.writeFileSync(outputFile, amdclean.clean({
         code: fs.readFileSync(outputFile),
-        rememberGlobalObject: false,
-        globalObject: true,
-        globalObjectName: 'Gizmo',
         wrap: {
           start: fs.readFileSync(__dirname + '/start.frag').toString(),
           end: fs.readFileSync(__dirname + '/end.frag').toString()
