@@ -1,7 +1,7 @@
 Gizmo [![Build Status](https://travis-ci.org/rstone770/Gizmo.png?branch=master)](https://travis-ci.org/rstone770/Gizmo)
 =====
 
-A small object library that tries to remove boilerplate code and promote better practice while providing a fresh interface when using objects. How small you ask? Well at the current version the gz compressed lib is 441bytes. This library focuses on factories instead of the new operator. Compiled the library should play nicely as a Common, AMD and global include.
+A small object library that tries to provide a super flexible and transparent way to create an use object. The goal for this project is to limit the gz compressed lib to under 1kb while providing rich features with transparency.  This library focuses on factories instead of the new operator. Compiled the library should play nicely as a Common, AMD and global include.
 
 ## Setup
 As of 0.0.2 the repository contains a bin file in the bin folder. However to hack and build your own versions simply use:
@@ -102,5 +102,35 @@ Determines if an objet is an instanceOf another one. This is done by comparing p
 Gizmo.extend().instanceOf(Gizmo); // true, a child is instanceOf its parent.
 Gizmo.instanceOf(Gizmo.extend()); // false, no a parent is not an instanceOf its child
 ```
+
+### \#super
+This is a new experemental method that should be used with cation. It will call the super of whatever method its currently in. This method relys on arguments.callee.caller so it will lose scope if your not careful. This feature is still in development so if you find a bug, please report.
+
+```javascript
+var MyObject = Gizmo.extend({
+  construct: function() {
+    return this.extend({
+      name: 'john'
+    });
+  },
+  method: function() {
+    return this.name
+  }
+});
+
+var AnotherObject = MyObject.extend({
+  construct: function() {
+    return this.super().extend({
+      anotherName: 'doe';
+    });
+  },
+  method: function() {
+    return this.super() + this.anotherName;
+  }
+});
+
+AnotherObject.construct().method(); // john doe
+```
+
 ## Doc
 A generated api doc is available on build or on grunt doc in the doc folder.
