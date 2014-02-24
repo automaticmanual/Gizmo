@@ -3,6 +3,11 @@ Gizmo [![Build Status](https://travis-ci.org/rstone770/Gizmo.png?branch=master)]
 
 A small object library that tries to provide a super flexible and transparent way to create an use object. The goal for this project is to limit the gz compressed lib to under 1kb while providing rich features with transparency.  This library focuses on factories instead of the new operator. Compiled the library should play nicely as a Common, AMD and global include.
 
+## Install
+```javascript
+bower install my-gizmo --save
+```
+
 ## Setup
 As of 0.0.2 the repository contains a bin file in the bin folder. However to hack and build your own versions simply use:
 ```
