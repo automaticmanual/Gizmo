@@ -1,4 +1,4 @@
-Gizmo [![Build Status](https://travis-ci.org/rstone770/Gizmo.png?branch=master)](https://travis-ci.org/rstone770/Gizmo)
+Gizmo [![Build Status](https://travis-ci.org/rstone770/Gizmo.png?branch=master)](https://travis-ci.org/rstone770/Gizmo) [![Bower version](https://badge.fury.io/bo/my-gizmo.png)](http://badge.fury.io/bo/my-gizmo)
 =====
 
 A small object library that tries to provide a super flexible and transparent way to create an use object. The goal for this project is to limit the gz compressed lib to under 1kb while providing rich features with transparency.  This library focuses on factories instead of the new operator. Compiled the library should play nicely as a Common, AMD and global include.
