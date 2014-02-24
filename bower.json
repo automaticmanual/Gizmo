@@ -2,6 +2,7 @@
   "name": "Gizmo",
   "version": "0.0.3",
   "license": "MIT",
+  "main": "bin/gizmo.min.js",
   "ignore": [
     "**/.*",
     "node_modules",
