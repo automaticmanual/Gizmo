@@ -7,7 +7,7 @@ config = {
   taskName: 'requirejs.complile',
   options: {
     baseUrl: 'src/',
-    name: 'gizmo',
+    name: 'Gizmo',
     out: 'bin/gizmo.min.js',
     onModuleBundleComplete: function (data) {
       var outputFile = data.path;

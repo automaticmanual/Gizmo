@@ -1,10 +1,10 @@
 define([
   'Gizmo/helpers/Base',
-  'Gizmo/gizmo'
+  'Gizmo/Gizmo'
 ], function(Base, Gizmo) {
 
-  describe('Gizmo/gizmo', function() {
-    describe('Gizmo/gizmo', function() {
+  describe('Gizmo/Gizmo', function() {
+    describe('Gizmo/Gizmo', function() {
       it('Should extend Base.', function() {
         Gizmo.instanceOf(Base).should.be.true;
       });
