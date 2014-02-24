@@ -127,5 +127,18 @@ define([
         Dot.has(object, 'item').should.be.true;
       });
     });
+
+    describe('#keyByValue', function() {
+      it('Should return a key by its value.', function() {
+        var object = {
+          ronnie: 'cat',
+          pickles: 'shepherd',
+          mittens: 'cat'
+        };
+
+        should.not.exist(Dot.keyByValue(object, 'ronnie'));
+        Dot.keyByValue(object, 'cat').should.equal('ronnie');
+      });
+    });
   });
 });

@@ -46,6 +46,38 @@ define([
       }
 
       return false;
+    },
+
+    /**
+     * Calls the super method of self.
+     *
+     * @param {...*}
+     * @return {?*}
+     */
+    super: function() {
+      var myArguments, caller, parent;
+
+      myArguments = [].slice.call(arguments);
+
+      caller = Dot.keyByValue(this, arguments.callee.caller);
+
+      parent = this;
+
+      if(!caller) {
+        throw new Error('Unable to locate caller.');
+      }
+
+      while(parent) {
+        if(parent[caller] === this[caller]) {
+          me = parent;
+        } else if(me && parent[caller]) {
+          return parent[caller].apply(this, myArguments);
+        }
+
+        parent = Object.getPrototypeOf(parent);
+      }
+
+      throw new Error('No super method of caller.');
     }
   };
 

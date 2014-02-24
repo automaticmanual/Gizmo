@@ -58,5 +58,63 @@ define([
         Extend.construct().instanceOf(Base).should.be.true;
       });
     });
+
+    describe('#super', function() {
+      it('Should call the super method of an object.', function() {
+        var Extend, ExtendFurther, ExtendEvenFurther, extendEvenFurther;
+
+        Extend = Base.extend({
+          construct: function() {
+            return this.extend({
+              name: 'name'
+            });
+          },
+          method: function(method) {
+            return this.name+method;
+          }
+        });
+
+        ExtendFurther = Extend.extend({
+          construct: function() {
+            return this.super().extend({
+              anotherName: 'anotherName'
+            });
+          },
+          method: function() {
+            return this.super(this.anotherName);
+          }
+        });
+
+        ExtendEvenFurther = ExtendFurther.extend({});
+
+        extendEvenFurther = ExtendEvenFurther.construct();
+
+        extendEvenFurther.should.have.property('name', 'name');
+        extendEvenFurther.should.have.property('anotherName', 'anotherName');
+        extendEvenFurther.method().should.equal('nameanotherName');
+      });
+
+      it('Should throw on unable to find caller.', function() {
+        var throwMe = function() {
+          Base.super();
+        };
+
+        throwMe.should.throw('Unable to locate caller.');
+      });
+
+      it('Should throw when a super method cant be located.', function() {
+        var throwMe = function() {
+          Base.extend({
+            method: function() {
+              this.super();
+            }
+          })
+          .construct()
+          .method();
+        };
+
+        throwMe.should.throw('No super method of caller');
+      });
+    });
   });
 });

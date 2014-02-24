@@ -57,11 +57,26 @@ define(function() {
      * Determines if object has a property.
      * 
      * @param  {!Object} object
-     * @param  {!String} item
+     * @param  {!String} key
      * @return {Boolean}
      */
-    has: function(object, item) {
-      return Object.hasOwnProperty.call(object, item);
+    has: function(object, key) {
+      return Object.hasOwnProperty.call(object, key);
+    },
+
+    /**
+     * Returns the first key that has value.
+     * 
+     * @param  {!Object} object
+     * @param  {!String} key
+     * @return {?String}
+     */
+    keyByValue: function(object, value) {
+      for(var property in object) {
+        if(object[property] === value) {
+          return property;
+        }
+      }
     }
   };
 
